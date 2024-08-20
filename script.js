@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.form');
     const recommendationList = document.getElementById('recommendation-list');
     const thankYouMessage = document.getElementById('thank-you-message');
-    
     form.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevents the default form submission behavior
 
@@ -29,21 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create new list item
             const listItem = document.createElement('li');
             listItem.textContent = textInput;
-            
             // Add name if provided
             if (nameInput) {
                 listItem.textContent = `${nameInput}: ${textInput}`;
             }
-            
             // Append to list
             recommendationList.appendChild(listItem);
-
             // Show thank-you message
             thankYouMessage.style.display = 'block';
-
             // Clear form fields
             form.reset();
-
             // Hide the message after a few seconds
             setTimeout(() => {
                 thankYouMessage.style.display = 'none';
